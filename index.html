@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>DJ PABLIITOX | Electronic Experience</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DJ PABLITO | Electronic Experience</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+
+/* RESET */
 
 *{
     margin:0;
@@ -25,7 +28,7 @@ body{
     overflow-x:hidden;
 }
 
-/* Fondo animado */
+/* FONDO */
 
 body::before{
     content:"";
@@ -33,29 +36,44 @@ body::before{
     width:100%;
     height:100%;
     background:
-    radial-gradient(circle at top left,#6a00ff33,transparent 25%),
+    radial-gradient(circle at top left,#6a00ff44,transparent 25%),
     radial-gradient(circle at bottom right,#00d9ff33,transparent 25%);
     z-index:-1;
 }
 
-/* NAV */
+/* NAVBAR */
 
 nav{
     position:fixed;
-    top:0;
     width:100%;
-    background:rgba(0,0,0,0.6);
-    backdrop-filter:blur(10px);
+    top:0;
+    left:0;
+    padding:18px 8%;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px 10%;
+    background:rgba(0,0,0,0.5);
+    backdrop-filter:blur(10px);
     z-index:1000;
 }
 
-.logo{
+.logo-container{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo-img{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    object-fit:cover;
+    box-shadow:0 0 20px #00e5ff;
+}
+
+.logo-text{
     font-family:'Orbitron',sans-serif;
-    font-size:1.5rem;
+    font-size:1.4rem;
     color:#00e5ff;
     text-shadow:0 0 10px #00e5ff;
 }
@@ -63,16 +81,16 @@ nav{
 nav ul{
     display:flex;
     list-style:none;
-    gap:30px;
+    gap:25px;
 }
 
-nav a{
+nav ul li a{
     color:white;
     text-decoration:none;
     transition:0.3s;
 }
 
-nav a:hover{
+nav ul li a:hover{
     color:#00e5ff;
 }
 
@@ -91,7 +109,6 @@ nav a:hover{
 .hero h1{
     font-family:'Orbitron',sans-serif;
     font-size:5rem;
-    color:#fff;
     text-shadow:
     0 0 10px #00e5ff,
     0 0 20px #00e5ff,
@@ -118,11 +135,10 @@ nav a:hover{
     border-radius:50px;
     background:linear-gradient(45deg,#6a00ff,#00e5ff);
     color:white;
-    font-size:1rem;
-    cursor:pointer;
-    transition:0.4s;
     text-decoration:none;
-    box-shadow:0 0 20px #00e5ff55;
+    font-weight:bold;
+    transition:0.4s;
+    box-shadow:0 0 25px #00e5ff55;
 }
 
 .btn:hover{
@@ -136,10 +152,10 @@ section{
 }
 
 .section-title{
-    font-size:2.5rem;
-    margin-bottom:40px;
-    color:#00e5ff;
+    font-size:2.8rem;
     text-align:center;
+    margin-bottom:50px;
+    color:#00e5ff;
     font-family:'Orbitron',sans-serif;
 }
 
@@ -155,12 +171,34 @@ section{
 .about img{
     width:100%;
     border-radius:20px;
-    box-shadow:0 0 30px #00e5ff44;
+    box-shadow:0 0 30px #00e5ff33;
 }
 
 .about-text{
     font-size:1.1rem;
     line-height:1.8;
+}
+
+/* GALERIA PERSONAL */
+
+.personal-gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.personal-gallery img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    border-radius:20px;
+    transition:0.4s;
+    border:2px solid #111;
+}
+
+.personal-gallery img:hover{
+    transform:scale(1.03);
+    box-shadow:0 0 25px #00e5ff;
 }
 
 /* EVENTOS */
@@ -181,7 +219,7 @@ section{
 
 .card:hover{
     transform:translateY(-10px);
-    box-shadow:0 0 30px #00e5ff33;
+    box-shadow:0 0 30px #00e5ff44;
 }
 
 .card img{
@@ -194,26 +232,21 @@ section{
     padding:20px;
 }
 
-/* GALERIA */
+/* VIDEOS */
 
-.gallery{
+.video-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
 }
 
-.gallery img{
+.video-grid video{
     width:100%;
-    border-radius:15px;
-    transition:0.4s;
+    border-radius:20px;
+    box-shadow:0 0 25px #000;
 }
 
-.gallery img:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 25px #00e5ff66;
-}
-
-/* FORMULARIO */
+/* CONTACTO */
 
 form{
     max-width:700px;
@@ -245,6 +278,11 @@ button{
     color:white;
     font-size:1rem;
     cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.03);
 }
 
 /* FOOTER */
@@ -252,7 +290,7 @@ button{
 footer{
     text-align:center;
     padding:40px;
-    color:#999;
+    color:#888;
 }
 
 /* RESPONSIVE */
@@ -272,28 +310,47 @@ footer{
         gap:15px;
     }
 
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
 }
 
 </style>
+
 </head>
 <body>
 
+<!-- NAVBAR -->
+
 <nav>
-    <div class="logo">DJ PABLIITOX</div>
+
+    <div class="logo-container">
+
+        <img src="logo.jpeg" class="logo-img">
+
+        <div class="logo-text">
+            DJ PABLITO
+        </div>
+
+    </div>
 
     <ul>
         <li><a href="#about">Sobre Mi</a></li>
+        <li><a href="#personal">Galería</a></li>
         <li><a href="#events">Eventos</a></li>
-        <li><a href="#gallery">Galería</a></li>
+        <li><a href="#videos">Videos</a></li>
         <li><a href="#contact">Reservas</a></li>
     </ul>
+
 </nav>
 
 <!-- HERO -->
 
 <section class="hero">
 
-    <h1>DJ PABLIITOX</h1>
+    <h1>DJ PABLITO</h1>
 
     <p>
         Electronic Experience • Antofagasta • Tech House • Progressive
@@ -309,36 +366,62 @@ footer{
 
 <section id="about">
 
-    <h2 class="section-title">Quién Soy</h2>
+    <h2 class="section-title">
+        Quién Soy
+    </h2>
 
     <div class="about">
 
-        <img src="https://images.unsplash.com/photo-1571266028243-d220c9c3b7c2?q=80&w=1200&auto=format&fit=crop" alt="dj">
+        <img src="imagenpersonal1.jpge">
 
         <div class="about-text">
 
             <p>
-                Soy DJ PABLIITOX, DJ de música electrónica de Antofagasta.
-                Me especializo en crear experiencias intensas y energéticas
-                mezclando Tech House, Progressive y sonidos underground.
+                Soy DJ Pablito, DJ de música electrónica de Antofagasta.
+                Especializado en Tech House, Progressive y sonidos underground.
+            </p>
+
+            <br>
+
+            <p>
+                Mi objetivo es crear experiencias intensas con visuales,
+                luces y música para transformar cualquier evento en algo inolvidable.
             </p>
 
             <br>
 
             <p>
                 He participado en fiestas privadas, eventos electrónicos,
-                sesiones nocturnas y presentaciones en vivo creando ambientes
-                únicos con visuales, luces y música.
-            </p>
-
-            <br>
-
-            <p>
-                Mi objetivo es hacer que cada evento se transforme en una
-                experiencia inolvidable.
+                sesiones nocturnas y presentaciones en vivo.
             </p>
 
         </div>
+
+    </div>
+
+</section>
+
+<!-- GALERIA PERSONAL -->
+
+<section id="personal">
+
+    <h2 class="section-title">
+        DJ Pablito Experience
+    </h2>
+
+    <div class="personal-gallery">
+
+        <img src="imagenpersonal1.jpge">
+        <img src="imagenpersonal2.jpge">
+        <img src="imagenpersonal3.jpge">
+        <img src="imagenpersonal4.jpge">
+        <img src="imagenpersonal5.jpge">
+        <img src="imagenpersonal6.jpge">
+        <img src="imagenpersonal7.jpge">
+        <img src="imagenpersonal8.jpge">
+        <img src="imagenpersonal9.jpge">
+        <img src="imagenpersonal10.jpge">
+        <img src="imagenpersonal11.jpge">
 
     </div>
 
@@ -348,39 +431,56 @@ footer{
 
 <section id="events">
 
-    <h2 class="section-title">Eventos</h2>
+    <h2 class="section-title">
+        Eventos
+    </h2>
 
     <div class="cards">
 
         <div class="card">
 
-            <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1200&auto=format&fit=crop">
+            <img src="imagenevento1.jpge">
 
             <div class="card-content">
-                <h3>Sunset Party</h3>
-                <p>Evento electrónico al aire libre con música house y progressive.</p>
+
+                <h3>Electronic Night</h3>
+
+                <p>
+                    Eventos electrónicos y sesiones underground.
+                </p>
+
             </div>
 
         </div>
 
         <div class="card">
 
-            <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?q=80&w=1200&auto=format&fit=crop">
+            <img src="imagenpersonal5.jpge">
 
             <div class="card-content">
-                <h3>Underground Session</h3>
-                <p>Sesión nocturna con ambiente rave y luces neon.</p>
+
+                <h3>Private Sessions</h3>
+
+                <p>
+                    Fiestas privadas y experiencias personalizadas.
+                </p>
+
             </div>
 
         </div>
 
         <div class="card">
 
-            <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200&auto=format&fit=crop">
+            <img src="imagenpersonal8.jpge">
 
             <div class="card-content">
-                <h3>Private Events</h3>
-                <p>Eventos privados y fiestas exclusivas.</p>
+
+                <h3>Live Experience</h3>
+
+                <p>
+                    Música, luces y energía en vivo.
+                </p>
+
             </div>
 
         </div>
@@ -389,21 +489,43 @@ footer{
 
 </section>
 
-<!-- GALERIA -->
+<!-- VIDEOS -->
 
-<section id="gallery">
+<section id="videos">
 
-    <h2 class="section-title">Galería</h2>
+    <h2 class="section-title">
+        Live Sessions
+    </h2>
 
-    <div class="gallery">
+    <div class="video-grid">
 
-        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1200&auto=format&fit=crop">
+        <video controls autoplay muted loop>
+            <source src="videoevento1.mp4" type="video/mp4">
+        </video>
 
-        <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?q=80&w=1200&auto=format&fit=crop">
+        <video controls autoplay muted loop>
+            <source src="videoevento2.mp4" type="video/mp4">
+        </video>
 
-        <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?q=80&w=1200&auto=format&fit=crop">
+        <video controls autoplay muted loop>
+            <source src="videoevento3.mp4" type="video/mp4">
+        </video>
 
-        <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?q=80&w=1200&auto=format&fit=crop">
+        <video controls autoplay muted loop>
+            <source src="videoevento4.mp4" type="video/mp4">
+        </video>
+
+        <video controls autoplay muted loop>
+            <source src="videoevento5.mp4" type="video/mp4">
+        </video>
+
+        <video controls autoplay muted loop>
+            <source src="videoevento6.mp4" type="video/mp4">
+        </video>
+
+        <video controls autoplay muted loop>
+            <source src="videoevento7.mp4" type="video/mp4">
+        </video>
 
     </div>
 
@@ -413,7 +535,9 @@ footer{
 
 <section id="contact">
 
-    <h2 class="section-title">Reservar Evento</h2>
+    <h2 class="section-title">
+        Reservar Evento
+    </h2>
 
     <form id="bookingForm">
 
@@ -433,11 +557,15 @@ footer{
 
 </section>
 
+<!-- FOOTER -->
+
 <footer>
 
-    © 2026 DJ PABLIITOX • Electronic Experience
+    © 2026 DJ PABLITO • Electronic Experience
 
 </footer>
+
+<!-- SCRIPT -->
 
 <script>
 
@@ -451,21 +579,25 @@ document.getElementById("bookingForm")
     let location = document.getElementById("location").value;
     let message = document.getElementById("message").value;
 
-    let phone = "56945200062"; // TU NUMERO
+    // CAMBIAR POR TU NUMERO
+    let phone = "56912345678";
 
     let text =
-`Hola DJ PABLIITOX! 🎧
+`Hola DJ Pablito 🎧
 
 Quiero cotizar un evento.
 
 👤 Nombre: ${name}
+
 📅 Fecha: ${date}
+
 📍 Lugar: ${location}
 
 📝 Detalles:
 ${message}`;
 
-    let url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+    let url =
+`https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
 
     window.open(url, "_blank");
 
